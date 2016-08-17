@@ -15,3 +15,4 @@
 и теперь можно запустить (в корне)
   $ cmake CMakeLists.txt
   $ make
+  
