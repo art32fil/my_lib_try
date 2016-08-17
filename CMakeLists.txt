@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 2.8)
+project(my_link_library)
+
+set(INCLUDE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/include)
+set(LIBRARY_PATH ${CMAKE_CURRENT_SOURCE_DIR}/lib)
+set(SRC_PATH ${CMAKE_CURRENT_SOURCE_DIR}/src)
+add_executable(main ${SRC_PATH}/main.cpp)
+include_directories(${INCLUDE_PATH})
+add_library(MYLIB STATIC IMPORTED)
+set_property(TARGET MYLIB PROPERTY IMPORTED_LOCATION ${LIBRARY_PATH}/libmylib.a)
+target_link_libraries(main MYLIB)
